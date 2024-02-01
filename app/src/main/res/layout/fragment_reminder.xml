@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/countdown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginVertical="30dp"/>
+
+    <EditText
+        android:id="@+id/messageBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="print message"
+        app:layout_constraintTop_toBottomOf="@id/countdown"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginVertical="30dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/pickDateButton"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Picked date"
+        app:layout_constraintTop_toBottomOf="@id/messageBox"/>
+
+    <ImageButton
+        android:id="@+id/pickDateButton"
+        android:src="@drawable/icon_calendar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/messageBox"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/timeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/pickTimeButton"
+        android:text="Picked time"
+        app:layout_constraintTop_toBottomOf="@id/pickDateButton"/>
+
+    <ImageButton
+        android:id="@+id/pickTimeButton"
+        android:src="@drawable/icon_clock"
+        android:scaleType="fitCenter"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pickDateButton"/>
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/pickTimeButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Submit"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reminder_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/submit"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
